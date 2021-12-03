@@ -3,20 +3,20 @@ with open("day01.txt") as txt:
     inp = [int(s.strip()) for s in txt]
 
 c = 0 #Part1
-for file, value in enumerate(inp[:-1]):
-    if inp[file + 1] > value:
+for txt, v in enumerate(inp[:-1]):
+    if inp[txt + 1] > v:
         c += 1
     '''
     else: #creates error msg for all unfit inputs
         print("error")'''
-print("1= " + c)
+print("1= " + str(c))
 
 w = 3 #Part2
 c2 = 0
-for file, value in enumerate(inp):
-    if sum(inp[file: file+w]) < sum(inp[file + 1:file+w + 1]):
+for txt, v in enumerate(inp):
+    if sum(inp[txt: txt + w]) < sum(inp[txt + 1:txt + w + 1]):
         c2 += 1
     '''
     else: #creates error msg for all unfit inputs
         print("error")'''
-print("2= " + c2)
+print("2= " + str(c2))
