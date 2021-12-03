@@ -1,0 +1,22 @@
+#Advent of Code; Day 1 Part 1/2
+with open("day01.txt") as txt:
+    inp = [int(s.strip()) for s in txt]
+
+c = 0 #Part1
+for file, value in enumerate(inp[:-1]):
+    if inp[file + 1] > value:
+        c += 1
+    '''
+    else: #creates error msg for all unfit inputs
+        print("error")'''
+print(c)
+
+w = 3 #Part2
+c2 = 0
+for file, value in enumerate(inp):
+    if sum(inp[file: file+w]) < sum(inp[file + 1:file+w + 1]):
+        c2 += 1
+    '''
+    else: #creates error msg for all unfit inputs
+        print("error")'''
+print(c2)
