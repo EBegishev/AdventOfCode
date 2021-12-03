@@ -9,7 +9,7 @@ for file, value in enumerate(inp[:-1]):
     '''
     else: #creates error msg for all unfit inputs
         print("error")'''
-print(1= c)
+print("1= " + c)
 
 w = 3 #Part2
 c2 = 0
@@ -19,4 +19,4 @@ for file, value in enumerate(inp):
     '''
     else: #creates error msg for all unfit inputs
         print("error")'''
-print(2= c2)
+print("2= " + c2)
