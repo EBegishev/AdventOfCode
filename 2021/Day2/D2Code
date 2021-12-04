@@ -1,4 +1,4 @@
-#Advent of Code; Day 1 Part 1/2
+#Advent of Code; Day 2 Part 1/2
 with open("day02.txt") as txt:
     inp = [s.strip().split(' ') for s in txt]
 
