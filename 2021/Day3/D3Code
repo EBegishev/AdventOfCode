@@ -1,0 +1,56 @@
+#Advent of Code; Day 3 Part 1/2
+with open("day03.txt") as txt: 
+    inp = [s.strip() for s in txt]
+
+import collections as co #Part 1
+dict = co.defaultdict(list)
+
+for i in range(len(inp[0])):
+    for l in inp:
+        dict[i].append(l[i])
+
+mb = []
+sb = []
+for k in dict.items():
+    key, v = k[0], k[1]
+    rate = co.Counter(v)
+    mb.append(rate.most_common(1)[0][0])
+    sb.append(rate.most_common()[-1][0][0])
+
+mb_joined = (''.join(mb))
+sb_joined = (''.join(sb))
+dec1 = int(mb_joined,2) 
+dec2 = int(sb_joined,2)
+
+print("1= ", (dec1) * (dec2))
+
+o2 = inp #Part 2
+o2_num = 0
+
+for i in range(len(inp[0])):
+    b = {"0": 0, "1": 0}
+    for number in o2:
+        b[number[i]] += 1
+    if b["1"] >= b["0"]:
+        mc = "1"
+    else:
+        mc = "0"
+    o2 = [n for n in o2 if n[i] == mc]
+    if len(o2) == 1:
+        o2_num = int(o2[0], 2)
+
+co2 = inp
+co2_num = 0
+for i in range(len(inp[0])):
+    b = {"0": 0, "1": 0}
+    for n in co2:
+        b[n[i]] += 1
+    if b["1"] < b["0"]:
+        lc = "1"
+    else: 
+        lc = "0"
+    co2 = [n for n in co2 if n[i] == lc]
+    if len(co2) == 1:
+        co2_num = int(co2[0], 2)
+
+print("2= ", (o2_num) * (co2_num))
