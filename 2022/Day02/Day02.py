@@ -44,4 +44,3 @@ for a in inp.split("\n"):
 
 print(tscore)
 print(tscore2)
-
