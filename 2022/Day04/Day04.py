@@ -1,7 +1,7 @@
 score = 0
 
-with open("Day04.txt") as f:
-    lines = [i.split('\n', 1)[0] for i in f.readlines()]
+with open("Day04.txt") as txt:
+    lines = [e.split('\n', 1)[0] for e in txt.readlines()]
 
 for line in lines:
     pair1 = line.split(',')[0]
